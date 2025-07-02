@@ -1,0 +1,70 @@
+
+
+
+.register-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--spacing);
+}
+
+.register-form {
+  width: 100%;
+  max-width: 400px;
+  background-color: var(--color-white);
+  padding: 2rem;
+  border-radius: var(--radius);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+
+}
+.error-container {
+  min-height: 1.5rem;  /* altura fija para el mensaje */
+  margin-bottom: 1rem; /* separa del botón */
+  color: red;
+  font-size: 0.9rem;
+  /* opcional para mantener el espacio aunque esté vacío */
+  visibility: visible;
+}
+
+
+.register-form label {
+  font-weight: bold;
+  margin-top: 1rem;
+  display: block;
+}
+
+.register-form input {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--color-accent);
+  background-color: #FAF5FF;
+  margin-bottom: 1rem;
+}
+
+.register-form button {
+  background-color: var(--color-accent);
+  color: var(--color-white);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+  
+}
+
+.register-form button:hover {
+  background-color: var(--color-accent-dark);
+}
+.register-form button:active {
+  background-color: #3e8e41; /* cambia el fondo mientras hacés click */
+  transform: scale(0.98);    /* efecto de “apretado” */
+}
+.error {
+  display: block;
+  min-height: 1.2em; /* o el alto que necesite tu texto de error */
+  color: red;
+  margin-bottom: 8px; /* un espacio entre el error y el botón */
+  visibility: visible;
+}

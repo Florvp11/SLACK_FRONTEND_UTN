@@ -1,0 +1,71 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+
+}
+
+body{
+  background-color: rgb(235, 233, 229);
+  color: black;
+  gap: 1rem;
+  height: 100vh;
+  width: 100%;
+  font-size: .8rem;
+  position: relative;
+}
+
+.contain{padding-inline:14%;
+}
+
+
+
+/*------------------------ Modo Oscuro -------------------------*/
+@media (prefers-color-scheme: dark) {
+
+:root {
+    
+--color-bg-dark:#414141bf;  
+--color-text-dark: white; 
+}
+body {
+  background-color: var(--color-bg-dark);
+  color: var(--color-text-dark); 
+}
+} 
+/*---------------------------------------------------------------------------------------------*/
+:root {
+  --color-bg: #F3E8FF;
+  --color-text: #4B4B4B;
+  --color-accent: #C084FC;
+  --color-accent-dark: #A855F7;
+  --color-white: #FFFFFF;
+
+  --font-main: 'Segoe UI', sans-serif;
+  --radius: 12px;
+  --spacing: 1rem;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-main);
+  background-color: var(--color-bg);
+
+  color: var(--color-text);
+  
+}
+
+form {
+
+  max-width: 400px;
+  margin: 3rem auto;
+  padding: 2rem;
+ 
+  background-color: var(--color-white);
+  border-radius: var(--radius);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    background-color: blue;
+}

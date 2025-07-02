@@ -1,0 +1,30 @@
+:root {
+  --color-bg: #F3E8FF;
+  --color-text: #4B4B4B;
+  --color-accent: #C084FC;
+  --color-accent-dark: #A855F7;
+  --color-white: #FFFFFF;
+
+  --font-main: 'Segoe UI', sans-serif;
+  --radius: 12px;
+  --spacing: 1rem;
+}
+
+.form {
+  width: 100%;
+  max-width: 400px;
+  background-color: var(--color-white);
+  padding: 2rem;
+  border-radius: var(--radius);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+
+}
+.error-container {
+  min-height: 1.5rem;  /* altura fija para el mensaje */
+  margin-bottom: 1rem; /* separa del botón */
+  color: red;
+  font-size: 0.9rem;
+  /* opcional para mantener el espacio aunque esté vacío */
+  visibility: visible;
+}
+
