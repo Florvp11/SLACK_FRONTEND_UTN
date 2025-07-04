@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './LoginScreen.css';
-import LOCALSTORAGE_KEYS from '../../constants/localStorage';
+import LOCALSTORAGE_KEYS from '../../constants/localStorage.js'
 import { useNavigate } from 'react-router-dom';
 import { login } from '../../services/authService';
 import { LOGIN_FIELD_NAMES } from '../../constants/form/login'

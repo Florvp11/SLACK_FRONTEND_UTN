@@ -51,3 +51,25 @@
   align-items: center;
   margin: .5rem;
 }
+
+
+
+/*------------------------ Modo Oscuro -------------------------*/
+@media (prefers-color-scheme: dark) {
+
+:root {
+    
+--color-bg-dark:#414141bf;  
+--color-text-dark: white; 
+--color-accent-dark: #793eb1;
+}
+body {
+  background-color: var(--color-bg-dark);
+  color: var(--color-text-dark); 
+}
+.login-form button {
+  background-color: var(--color-accent-dark);
+} 
+}
+
+

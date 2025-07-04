@@ -48,8 +48,6 @@ const RegisterScreen = () => {
             }
             setSuccess(true);
 
-
-            console.log("Respuesta del servidor:", serverData);
             if (serverData.ok) {
                 navigate("/home");
             }

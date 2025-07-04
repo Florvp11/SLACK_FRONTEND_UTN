@@ -68,3 +68,11 @@
   margin-bottom: 8px; /* un espacio entre el error y el botón */
   visibility: visible;
 }
+
+
+
+@media (prefers-color-scheme: dark) {
+.register-form button {
+  background-color: var(--color-accent-dark);
+} 
+}
