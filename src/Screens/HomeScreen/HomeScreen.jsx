@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { getAllWorkspaces } from '../../services/workspacesService';
+import { getAllWorkspaces } from '../../services/workspaceService.js';
 import { Link } from 'react-router-dom';
 
 const HomeScreen = () => {
@@ -34,17 +34,19 @@ const HomeScreen = () => {
                         ? <h2>Cargando...</h2>
                         : <div>
                             {
-                                response.data.workspaces.map(
-                                    (element) => {
-                                        return (
-                                            <div>
-                                                <h2>{element.workspace.name}</h2>
-                                                <Link to={'/workspace' + element.workspace._id}> Ir a espacio de trabajo</Link>
-                                            </div>
-                                        )
-                                    }
+                                response.data.workspaces
+                                    .filter((element) => element.workspace !== null)
+                                    .map(
+                                        (element) => {
+                                            return (
+                                                <div key={element.workspace._id}>
+                                                    <h2>{element.workspace.name}</h2>
+                                                    <Link to={'/workspaces/' + element.workspace._id}> Ir a espacio de trabajo</Link>
+                                                </div>
+                                            )
+                                        }
 
-                                )
+                                    )
                             }
                         </div>
                 }
