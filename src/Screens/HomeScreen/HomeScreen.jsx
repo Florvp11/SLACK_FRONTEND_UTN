@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { getAllWorkspaces } from '../../services/workspaceService.js';
 import { Link } from 'react-router-dom';
+import './HomeScreen.css';
 
 const HomeScreen = () => {
     const [response, setResponse] = useState([]);
@@ -27,22 +28,29 @@ const HomeScreen = () => {
 
     return (
         <div>
-            <h1>Tus espacios de trabajo</h1>
-            <div>
+            <header>
+                <h1>Tus espacios de trabajo</h1>
+                <Link to={'/new'} className='newWorkspace'>
+                    Crear espacio de trabajo
+                </Link>
+            </header>
+            <div className='grid-container'>
                 {
                     loading
                         ? <h2>Cargando...</h2>
-                        : <div>
+                        : <div className='gridWorkspaces'>
                             {
                                 response.data.workspaces
                                     .filter((element) => element.workspace !== null)
                                     .map(
                                         (element) => {
                                             return (
-                                                <div key={element.workspace._id}>
-                                                    <h2>{element.workspace.name}</h2>
-                                                    <Link to={'/workspaces/' + element.workspace._id}> Ir a espacio de trabajo</Link>
-                                                </div>
+                                                <Link to={'/workspaces/' + element.workspace._id} className='cardWorkspaces'>
+                                                    <div key={element.workspace._id} >
+                                                        <h2>{element.workspace.name}</h2>
+                                                        <b>Ir a espacio de trabajo</b>
+                                                    </div>
+                                                </Link>
                                             )
                                         }
 

@@ -1,0 +1,41 @@
+:root {
+    --font-cat: .8rem;
+    --font-steps : 1.5rem;
+    --font-h3 : 1.5rem;
+    
+    --color-btns : #222;
+    --color-bg-cards: #fff;
+    --color-bg-header: #2c7597;
+    --color-border: rgba(139, 138, 138, 0.702);
+    --color-bg-light: #ffffff;
+    --color-hover: #f2f2f2;
+    --color-fav : #fd7cff;
+    --color-shadow: #5f5d5d96;
+    --color-random-shadow: #33333381;
+    --color-btn-bg: #fbefef;
+    --color-btn-border: #f3bdbd;
+    --color-btn-hover: #fef7f7;
+    --font-h2: 1.75rem;
+    --recip-margin : 2rem;
+    --font-description: 1.1rem;
+    --border-radius: 1rem;
+    --padding-small: .35rem 1rem;
+    --padding-normal:1rem;
+    --padding-medium: 1.5rem;
+    --padding-large: 2rem;
+    --padding-Extralarge: 2.5rem;
+    --gap-small: .5rem;
+    --gap-medium: 1rem;
+    --gap-large: 1.5rem;
+    --gap-Extralarge: 2rem;
+    --box-shadow: 0px 0px 10px var(--color-shadow);
+    --box-shadow-img: 0px 5px 5px var(--color-random-shadow);
+    --box-shadow-content: 5px 5px 5px var(--color-random-shadow);
+    --border-color-categories: #c2c2c2;
+    --transition: all .2s ease-in-out;
+    --btn-Width :100px;
+    --rose-hover :  #fad9d9;
+    --cat-border : .5px solid var(--color-border); 
+    --titles-color: #444;
+    --color-decrip : #555;
+}
