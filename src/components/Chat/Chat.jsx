@@ -31,6 +31,10 @@ const Chat = () => {
         loadMessages()
     }, [channel_id]) //cada vez que cambie de canal, se cargan los mensajs de ese canal.
     console.log(messages_response)
+    if (loading) return <p>Cargando mensajes...</p>
+    if (error) return <p>Error al cargar los mensajes: {error.message}</p>
+    if (!messages_response?.data?.messages?.length) return <p>No hay mensajes en este canal.</p>
+
     return (
         <div>
             <h1>Chat</h1>
