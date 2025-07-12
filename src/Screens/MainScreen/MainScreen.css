@@ -1,0 +1,73 @@
+.main-screen-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #8d8ceb 0%, #cf70ec 100%);
+  color: white;
+  text-align: center;
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.main-message {
+  max-width: 500px;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.4);
+}
+
+.main-message h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.marketing-phrase {
+  font-size: 1.3rem;
+  font-style: italic;
+  margin-bottom: 35px;
+  line-height: 1.5;
+}
+
+.btn {
+  padding: 12px 30px;
+  margin: 10px;
+  border: none;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-register {
+  background-color: #821d9b;
+  color: white;
+}
+
+.btn-register:hover {
+  background-color: #4d125c;
+
+}
+
+.login-prompt {
+  margin-top: 25px;
+  font-size: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn-login {
+  background-color: transparent;
+  border: 2px solid white;
+  color: white;
+  padding: 8px 20px;
+  border-radius: 30px;
+}
+
+.btn-login:hover {
+  background-color: rgb(203, 175, 248);
+  color: #000000;
+}

@@ -76,6 +76,15 @@ const LoginScreen = () => {
                 }
 
             </form>
+
+            <div>
+                <span>¿Eres nuevo? </span>
+                <button
+                    onClick={() => navigate('/register')}
+                >
+                    Registrate
+                </button>
+            </div>
         </section >
 
 

@@ -8,6 +8,8 @@ import AuthProtectRoute from './components/AuthProtectRoute/AuthProtectRoute';
 import WorkspaceDetailScreen from './Screens/WorkspaceDetailScreen/WorkspaceDetailScreen';
 import NewWorkspaceScreen from './Screens/NewWorkspaceScreen/NewWorkspaceScreen';
 import "./style.css"
+import EmailVerificationScreen from './Screens/EmailVerificationScreen/EmailVerificationScreen';
+import MainScreen from './Screens/MainScreen/MainScreen';
 
 
 
@@ -17,9 +19,10 @@ function App() {
   return (
     <div>
       <Routes>
-        <Route path="/" element={<LoginScreen />} />
+        <Route path="/" element={<MainScreen />} />
         <Route path="/login" element={<LoginScreen />} />
         <Route path="/register" element={<RegisterScreen />} />
+        <Route path='/verify-email' element={<EmailVerificationScreen />} />
         <Route element={<AuthProtectRoute />} >
           <Route path='/home' element={<HomeScreen />} />
           <Route

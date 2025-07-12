@@ -49,7 +49,7 @@ const RegisterScreen = () => {
             setSuccess(true);
 
             if (serverData.ok) {
-                navigate("/home");
+                navigate("/verify-email");
             }
 
         } catch (error) {
@@ -103,13 +103,11 @@ const RegisterScreen = () => {
                     />
                 </div>
                 <div className="error-container">
-                    {/* Usamos visibility para mostrar/ocultar sin alterar layout */}
                     <span style={{ visibility: error ? 'visible' : 'hidden' }}>
                         {error || 'Mensaje placeholder'}
                     </span>
                 </div>
 
-                { /* {error && <span className='error'>{error}</span>}*/}
                 {
                     loading
                         ? <button type="submit" disabled>Registrando...</button>
@@ -118,8 +116,19 @@ const RegisterScreen = () => {
                             : <button type="submit">Registrarse</button>
                 }
             </form>
+
+            <div >
+                <span>¿Ya tienes una cuenta? </span>
+                <button
+                    onClick={() => navigate('/login')}
+
+                >
+                    Iniciá sesión
+                </button>
+            </div>
         </section>
     );
+
 };
 
 export default RegisterScreen;

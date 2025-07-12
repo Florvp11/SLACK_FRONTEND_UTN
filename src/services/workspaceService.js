@@ -47,3 +47,23 @@ export const createWorkspace = async (workspace) => {
         throw error
     }
 }
+export const deleteWorkspace = async ({ workspace_id }) => {
+    try {
+        const auth_token = localStorage.getItem(LOCALSTORAGE_KEYS.authorizationToken)
+        const response = await fetch(`${ENVIRONMENT.URL_API}/api/workspaces/${workspace_id}`, {
+            method: methods_HTTP.DELETE,
+            headers: {
+                'Authorization': `Bearer ${auth_token}`,
+            },
+        })
+
+        if (!response.ok) {
+            throw new Error('No se pudo eliminar el workspace')
+        }
+
+        return true
+    } catch (error) {
+        console.error('Error al eliminar workspace:', error)
+        throw error
+    }
+}

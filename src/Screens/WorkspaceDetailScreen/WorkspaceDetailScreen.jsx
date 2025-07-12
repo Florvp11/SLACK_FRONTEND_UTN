@@ -3,6 +3,9 @@ import { getChannels, createChannel } from '../../services/channelService'
 import { Link, Navigate, useParams } from 'react-router-dom'
 import SidebarChannels from '../../components/SidebarChannels/SidebarChannels'
 import Chat from '../../components/Chat/Chat'
+import { deleteWorkspace } from '../../services/workspaceService'
+import { useNavigate } from 'react-router-dom'
+
 
 
 const WorkspaceDetailScreen = () => {
@@ -49,6 +52,7 @@ const WorkspaceDetailScreen = () => {
             throw error('No se pudo crear el canal, intente nuevamente')
         }
     }
+
 
     if (loading) {
         return <div>Loading...</div>
