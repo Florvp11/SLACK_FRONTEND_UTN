@@ -52,7 +52,7 @@ export const verifyEmail = async (verify_token) => {
         // Asumo que tu backend usa método POST para la verificación, si es GET,
         // solo cambia método y cómo pasás el token (en query o body).
         const serverResponse = await fetch(
-            `${ENVIRONMENT.URL_API}/api/users/verify?verify_token=${encodeURIComponent(verify_token)}`,
+            `${ENVIRONMENT.URL_API}/api/users/verify-email?verify_token=${encodeURIComponent(verify_token)}`,
             {
                 method: methods_http.GET,
                 headers: {
