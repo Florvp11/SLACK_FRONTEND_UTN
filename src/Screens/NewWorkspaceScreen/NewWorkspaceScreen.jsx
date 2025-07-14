@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { createWorkspace } from '../../services/workspaceService'
 import { Link, useNavigate } from 'react-router-dom'
+import Sidebar from '../../components/SideBar/SideBar';
 
 const NewWorkspaceScreen = () => {
     const navigate = useNavigate()
@@ -51,44 +52,35 @@ const NewWorkspaceScreen = () => {
     }, [response])
 
     return (
-        <div>
-            <Link to={'/home'}>
-                Volver a mis espacios de trabajo
-            </Link>
+        <div className="app-layout">
+            <Sidebar />
 
-            {loading ? (
-                <span>cargando...</span>
-            ) : (
-                <>
-                    <h1>Crear espacio de trabajo</h1>
-                    <form onSubmit={handleSubmit}>
-                        <div>
-                            <label htmlFor='name'>Nombre</label>
-                            <input
-                                type="text"
-                                name='name'
-                                id='name'
-                                value={form_state.name}
-                                onChange={handleChange}
-                            />
-                        </div>
-                        <div>
-                            <label htmlFor='description'>Descripción</label>
-                            <input
-                                type="text"
-                                name='description'
-                                id='description'
-                                value={form_state.description}
-                                onChange={handleChange}
-                            />
-                        </div>
-                        <button>Crear workspace</button>
-                    </form>
-                    {error && <p style={{ color: 'red' }}>Hubo un error: {error.message}</p>}
-                </>
-            )}
+            <div className="main-content">
+                {loading ? (
+                    <span>cargando...</span>
+                ) : (
+                    <>
+                        <h1>Crear espacio de trabajo</h1>
+                        <form onSubmit={handleSubmit}>
+                            <div>
+                                <label htmlFor='name'>Nombre</label>
+                                <input
+                                    type="text"
+                                    name='name'
+                                    id='name'
+                                    value={form_state.name}
+                                    onChange={handleChange}
+                                />
+                            </div>
+                            <button>Crear workspace</button>
+                        </form>
+                        {error && <p style={{ color: 'red' }}>Hubo un error: {error.message}</p>}
+                    </>
+                )}
+            </div>
         </div>
-    )
+    );
+
 }
 
 export default NewWorkspaceScreen

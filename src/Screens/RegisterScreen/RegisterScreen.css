@@ -1,21 +1,42 @@
 
-
-
 .register-container {
+
+ padding: var(--spacing);
+  width: 100%;
+  justify-content: center;
+   width: 100%;
+  padding: var(--spacing);
+  height: 100vh;
+}
+
+
+.register-form {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: var(--spacing);
-}
-
-.register-form {
   width: 100%;
   max-width: 400px;
+  justify-content: center;
+  height: 600px;
   background-color: var(--color-white);
   padding: 2rem;
   border-radius: var(--radius);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  box-shadow: 0px 2px 10px #00000055;
 
+
+}
+.register-form-text{
+   text-align: center;
+display: flex;
+flex-direction: column;
+gap: 1rem;
+  padding: 1rem;
+}
+.register-form-text p{
+  color: #4b5563;
+}
+.register-form-text h1{
+  font-size: 2.5rem;
 }
 .error-container {
   min-height: 1.5rem;  /* altura fija para el mensaje */
@@ -42,23 +63,32 @@
   margin-bottom: 1rem;
 }
 
-.register-form button {
+
+.btn-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.register-btn{
   background-color: var(--color-accent);
   color: var(--color-white);
   border: none;
   padding: 0.75rem 1.5rem;
   border-radius: var(--radius);
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition:0.3s ease;
   width: 100%;
   
 }
 
-.register-form button:hover {
+.register-btn:hover {
   background-color: var(--color-accent-dark);
 }
 .register-form button:active {
-  background-color: #3e8e41; /* cambia el fondo mientras hacés click */
+ 
   transform: scale(0.98);    /* efecto de “apretado” */
 }
 .error {
@@ -69,7 +99,26 @@
   visibility: visible;
 }
 
+.redireccion-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: .5rem;
+  gap: 1rem;
+  width: 100%;
+}
 
+.login-btn{
+  border: none;
+  color: var(--color-accent);
+  background-color: transparent;
+  font-size:larger;
+  cursor: pointer;
+   &:hover{
+      color: var(--color-accent-dark);
+      background-color: transparent;
+  }
+}
 
 @media (prefers-color-scheme: dark) {
 .register-form button {

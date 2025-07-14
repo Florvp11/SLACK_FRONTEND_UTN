@@ -1,11 +1,11 @@
 
 :root {
-  --color-bg: #dfecfc;
+  --color-bg: #f7f7f7;
   --color-text: #4B4B4B;
   --color-accent: #C084FC;
   --color-accent-dark: #A855F7;
   --color-white: #FFFFFF;
-
+  --color-sidebar : #370444a4
   --font-main: 'Segoe UI', sans-serif;
   --radius: 12px;
   --spacing: 1rem;

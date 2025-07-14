@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import { getAllMessagesByChannelId, createNewMessage } from "../../services/messagesService"
+import './Chat.css'
 
 const Chat = () => {
     const [messages_response, setMessagesResponse] = useState([])
@@ -48,33 +49,36 @@ const Chat = () => {
     if (error) return <p>Error al cargar los mensajes: {error.message}</p>
 
     return (
-        <div>
+        <div className="chat-container">
             <h1>Chat</h1>
-            {messages_response?.data?.messages?.length === 0 ? (
-                <p>No hay mensajes en este canal.</p>
-            ) : (
-                messages_response.data.messages.map((message) => (
-                    <div key={message._id}>
-                        <b>Emisor: {message.user.name}</b>
-                        <p>{message.content}</p>
-                    </div>
-                ))
-            )}
 
-            <form onSubmit={handleSubmit}>
-                <div>
-                    <label htmlFor="content">Escribir mensaje</label>
-                    <textarea
-                        name="content"
-                        id="content"
-                        value={content}
-                        onChange={handleChange}
-                    />
-                </div>
-                <button type="submit">Enviar mensaje</button>
+            <div className="messages">
+                {messages_response?.data?.messages?.length === 0 ? (
+                    <p>No hay mensajes en este canal.</p>
+                ) : (
+                    messages_response.data.messages.map((message) => (
+                        <div key={message._id}>
+                            <b>Emisor: {message.user.name}</b>
+                            <p>{message.content}</p>
+                        </div>
+                    ))
+                )}
+            </div>
+
+            <form className="text-area" onSubmit={handleSubmit}>
+
+                <textarea
+                    name="content"
+                    id="content"
+                    value={content}
+                    onChange={handleChange}
+                    placeholder="Escribe un mensaje..."
+                />
+                <button className="send-button" type="submit">Enviar</button>
             </form>
         </div>
-    )
+    );
+
 }
 
 export default Chat

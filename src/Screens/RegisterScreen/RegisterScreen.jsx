@@ -67,9 +67,13 @@ const RegisterScreen = () => {
 
     return (
         <section className="register-container">
-            <h1>RegisterScreen</h1>
+
             <form className="register-form" onSubmit={handleSubmit}>
-                <div>
+                <div className="register-form-text">
+                    <h1>Registrate aqui!</h1>
+                    <p>Completa los siguientes campos : </p>
+                </div>
+                <div className="input-wrapper">
                     <label htmlFor='name'>Nombre:</label>
                     <input
                         id='name'
@@ -80,7 +84,7 @@ const RegisterScreen = () => {
                         onChange={handleChange}
                     />
                 </div>
-                <div>
+                <div className="input-wrapper">
                     <label htmlFor='email'>Email:</label>
                     <input
                         id='email'
@@ -91,7 +95,7 @@ const RegisterScreen = () => {
                         onChange={handleChange}
                     />
                 </div>
-                <div>
+                <div className="input-wrapper">
                     <label htmlFor='password'>Contraseña:</label>
                     <input
                         id='password'
@@ -107,26 +111,30 @@ const RegisterScreen = () => {
                         {error || 'Mensaje placeholder'}
                     </span>
                 </div>
+                <div className='btn-container'>
+                    {
+                        loading
+                            ? <button className='register-btn' type="submit" disabled>Registrando...</button>
+                            : success
+                                ? <button className='register-btn' type="button" disabled>Usuario Registrado!</button>
+                                : <button className='register-btn' type="submit">Registrarse</button>
+                    }
 
-                {
-                    loading
-                        ? <button type="submit" disabled>Registrando...</button>
-                        : success
-                            ? <button type="button" disabled>Usuario Registrado!</button>
-                            : <button type="submit">Registrarse</button>
-                }
+                    <div className='redireccion-container' >
+                        <span>¿Ya tienes una cuenta? </span>
+                        <button
+                            className='login-btn'
+                            onClick={() => navigate('/login')}
+
+                        >
+                            Iniciá sesión
+                        </button>
+                    </div>
+                </div>
             </form>
 
-            <div >
-                <span>¿Ya tienes una cuenta? </span>
-                <button
-                    onClick={() => navigate('/login')}
 
-                >
-                    Iniciá sesión
-                </button>
-            </div>
-        </section>
+        </section >
     );
 
 };

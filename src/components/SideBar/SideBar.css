@@ -1,0 +1,33 @@
+.sidebar {
+  width: 150px;
+  height: 100vh;
+  background-color: #734B5E;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+  border-right: 3px solid #734B5E;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+.newWorkspace, .logout-button, .home-button {
+
+  background-color: #573947;
+
+  padding: 2rem;
+  border-radius: 50%;
+  color: #ffffff;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  &:hover{
+      background-color: #462e39;
+  }
+}

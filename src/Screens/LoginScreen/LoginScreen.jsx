@@ -57,34 +57,50 @@ const LoginScreen = () => {
 
     return (
         <section className="login-container">
-            <h1>LoginScreen</h1>;
+
+
             <form onSubmit={handleSubmit} className="login-form">
-                <div>
+                <div className="login-form-text">
+                    <h1>Inicia Sesion</h1>
+                    <p>Accede a tu cuenta para continuar</p>
+                </div>
+
+                <div className="input-wrapper">
                     <label htmlFor='email'>Ingresa tu email: </label>
                     <input id='email' name={LOGIN_FIELD_NAMES.EMAIL} placeholder='tumail@mail.com' type='email' value={formState[LOGIN_FIELD_NAMES.EMAIL]} onChange={handleChange} /> {/*cada vez q hayaun cambio de valor en mi input se activa handlechange*/}
-                </div>
-                <div>
-                    <label htmlFor='password'>Ingresa tu contrasenia : </label>
+                </div >
+                <div className="input-wrapper">
+                    <label htmlFor='password'>Ingresa tu contraseña : </label>
                     <input id='password' name={LOGIN_FIELD_NAMES.PASSWORD} type='password' value={formState[LOGIN_FIELD_NAMES.PASSWORD]} onChange={handleChange} />
                 </div>
-                {error && <span className='error'>{error}</span>}
-                {
-                    loading
-                        ? <button type='submit' disabled={loading}>Cargando...</button>
-                        : <button type='submit'>Iniciar Sesion</button>
+                <div className="error-container">
+                    <span style={{ visibility: error ? 'visible' : 'hidden' }}>
+                        {error || 'Mensaje placeholder'}
+                    </span>
+                </div>
+                <div className='btn-container'>
+                    {
+                        loading
+                            ? <button className='btn-LogIn' type='submit' disabled={loading}>Cargando...</button>
+                            : <button className='btn-LogIn' type='submit'>Iniciar Sesion</button>
 
-                }
+                    }
+
+                    <div className='redireccion-container'>
+                        <span> ¿Eres nuevo? </span>
+                        <button
+                            className='registerBtn'
+                            onClick={() => navigate('/register')}>
+
+                            Registrate
+                        </button>
+                    </div>
+                </div>
 
             </form>
 
-            <div>
-                <span>¿Eres nuevo? </span>
-                <button
-                    onClick={() => navigate('/register')}
-                >
-                    Registrate
-                </button>
-            </div>
+
+
         </section >
 
 

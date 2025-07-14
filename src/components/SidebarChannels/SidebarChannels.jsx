@@ -1,5 +1,7 @@
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import React, { useState, useMemo } from 'react'
+import './SidebarChannels.css'
+import { FaPlus } from "react-icons/fa";
 
 const SidebarChannels = ({ channels, onCreateChannel }) => {
     const [searchTerm, setSearchTerm] = useState('')
@@ -32,43 +34,55 @@ const SidebarChannels = ({ channels, onCreateChannel }) => {
     }
 
     return (
-        <aside>
-            <input
-                type="text"
-                placeholder="Buscar canales..."
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
+        <aside className='container'>
+            <div className='top'>
+                <input
+                    className='search-bar'
+                    type="text"
+                    placeholder="Buscar canales..."
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
+                />
 
-            />
-
-            {isCreating ? (
-                <form onSubmit={handleSubmit}>
-                    <input
-                        type="text"
-                        placeholder="Nombre del nuevo canal"
-                        value={newChannelName}
-                        onChange={(e) => setNewChannelName(e.target.value)}
-                        autoFocus
-
-                    />
-                    <button type="submit" >Crear</button>
-                    <button type="button" onClick={handleCancel}>Cancelar</button>
-                </form>
-            ) : (
-                <button onClick={handleCreateClick}>
-                    + Nuevo Canal
+                <button className="btn-new-channel" onClick={handleCreateClick} title='NuevoCanal'>
+                    <FaPlus size={16} />
                 </button>
-            )}
+
+                {isCreating && (
+                    <div className="modal-screen">
+                        <div className="modal">
+                            <h3>Crear nuevo canal</h3>
+                            <form className='create-channel-form' onSubmit={handleSubmit}>
+                                <input
+                                    type="text"
+                                    placeholder="Nombre del nuevo canal"
+                                    value={newChannelName}
+                                    onChange={(e) => setNewChannelName(e.target.value)}
+                                    className='modal-input'
+                                />
+                                <div className="modal-buttons">
+                                    <button type="submit">Crear</button>
+                                    <button type="button" onClick={handleCancel}>Cancelar</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                )}
+            </div>
+
             <nav>
                 {filteredChannels.length > 0 ? (
                     filteredChannels.map(channel => (
                         <div key={channel._id}>
-                            <Link
+                            <NavLink
                                 to={`/workspaces/${channel.workspace_id}/channels/${channel._id}`}
                                 onClick={() => setSearchTerm('')} // limpio la barra de bsuqueda
+                                className={({ isActive }) =>
+                                    isActive ? 'link active' : 'link'
+                                }
                             >
-                                {channel.name}
-                            </Link>
+                                ❀ {channel.name}
+                            </NavLink>
                         </div>
                     ))
                 ) : (
@@ -76,7 +90,7 @@ const SidebarChannels = ({ channels, onCreateChannel }) => {
                 )}
             </nav>
 
-        </aside>
+        </aside >
     )
 }
 
