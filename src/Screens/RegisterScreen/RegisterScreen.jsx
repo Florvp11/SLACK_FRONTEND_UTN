@@ -49,7 +49,8 @@ const RegisterScreen = () => {
             setSuccess(true);
 
             if (serverData.ok) {
-                window.open("/verify-email", "_blank");
+                window.open("/api/users/verify-email", "_blank")
+
             }
 
         } catch (error) {
