@@ -53,3 +53,77 @@ textarea{
 button:hover {
   background-color: #5c3a4b;
 }
+
+
+
+@media (max-width: 768px) {
+  .chat-container {
+    padding: 0.8rem;
+  }
+  
+  .messages {
+    padding: 0.3rem;
+  }
+  
+  form {
+    flex-direction: column;
+    gap: 0.8rem;
+    padding-top: 0.8rem;
+  }
+  
+  textarea {
+    height: 70px;
+    font-size: 1rem;
+  }
+  
+  .send-button {
+    width: 100%;
+    max-width: 200px;
+    padding: 0.5rem;
+  }
+}
+
+
+@media (max-width: 576px) {
+  .chat-container {
+    padding: 0.5rem;
+  }
+  
+  .messages div {
+    padding: 0.6rem;
+    font-size: 0.9rem;
+  }
+  
+  textarea {
+    height: 60px;
+    font-size: 0.9rem;
+  }
+  
+  .send-button {
+    padding: 0.5rem;
+    font-size: 0.9rem;
+  }
+}
+
+
+@media (max-width: 400px) {
+  .messages {
+    margin-bottom: 0.5rem;
+  }
+  
+  .messages b {
+    font-size: 0.9rem;
+  }
+  
+  textarea {
+    height: 30px;
+    min-height: 30px;
+    &:focus{
+      outline: none;
+    }
+  }
+  
+  .send-button {
+    max-width: 150px;
+  }
+}

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { createWorkspace } from '../../services/workspaceService'
 import { Link, useNavigate } from 'react-router-dom'
 import Sidebar from '../../components/SideBar/SideBar';
+import './NewWorkspaceScreen.css'
 
 const NewWorkspaceScreen = () => {
     const navigate = useNavigate()
@@ -61,18 +62,21 @@ const NewWorkspaceScreen = () => {
                 ) : (
                     <>
                         <h1>Crear espacio de trabajo</h1>
-                        <form onSubmit={handleSubmit}>
-                            <div>
-                                <label htmlFor='name'>Nombre</label>
-                                <input
-                                    type="text"
-                                    name='name'
-                                    id='name'
-                                    value={form_state.name}
-                                    onChange={handleChange}
-                                />
-                            </div>
+                        <form onSubmit={handleSubmit} className='create-input'>
+
+
+                            <input
+                                className='inp'
+                                type="text"
+                                name='name'
+                                id='name'
+                                value={form_state.name}
+                                onChange={handleChange}
+                                placeholder='   Nombre del Workspace'
+                            />
                             <button>Crear workspace</button>
+
+
                         </form>
                         {error && <p style={{ color: 'red' }}>Hubo un error: {error.message}</p>}
                     </>

@@ -49,7 +49,7 @@ const RegisterScreen = () => {
             setSuccess(true);
 
             if (serverData.ok) {
-                navigate("/")
+                navigate("/emailSent")
 
             }
 

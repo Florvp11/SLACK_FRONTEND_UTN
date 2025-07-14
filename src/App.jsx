@@ -10,6 +10,7 @@ import NewWorkspaceScreen from './Screens/NewWorkspaceScreen/NewWorkspaceScreen'
 import "./style.css"
 import EmailVerificationScreen from './Screens/EmailVerificationScreen/EmailVerificationScreen';
 import MainScreen from './Screens/MainScreen/MainScreen';
+import EmailVerificationSent from './Screens/EmailSent/EmailSent';
 
 
 
@@ -22,6 +23,7 @@ function App() {
         <Route path="/" element={<MainScreen />} />
         <Route path="/login" element={<LoginScreen />} />
         <Route path="/register" element={<RegisterScreen />} />
+        <Route path="/emailSent" element={<EmailVerificationSent />} />
         <Route path='/verify-email' element={<EmailVerificationScreen />} />
         <Route element={<AuthProtectRoute />} >
           <Route path='/home' element={<HomeScreen />} />

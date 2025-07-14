@@ -16,7 +16,7 @@
 .newWorkspace, .logout-button, .home-button {
 
   background-color: #573947;
-
+  margin: 0;
   padding: 2rem;
   border-radius: 50%;
   color: #ffffff;
@@ -29,5 +29,27 @@
   border: none;
   &:hover{
       background-color: #462e39;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 80px;
+    padding: 1rem 0.5rem;
+  }
+
+  .newWorkspace,
+  .logout-button,
+  .home-button {
+    padding: 1rem;
+  }
+
+  /* Opcional: reducir el tamaño del ícono */
+  .newWorkspace svg,
+  .logout-button svg,
+  .home-button svg {
+    width: 20px;
+    height: 20px;
   }
 }

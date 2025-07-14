@@ -75,6 +75,7 @@ width: 100%;
     text-align: center;
     padding: 1rem;
     width: 100%;
+    max-width: 500px;
     border-radius: 8px;
     text-decoration: none;
     color: 	#070707;
@@ -86,4 +87,93 @@ width: 100%;
     transform: scale(1.01);
     background-color: #734b5e;
    
+}
+
+
+/* MEDIA QUERIES ---------responsive*/
+
+@media (max-width: 1024px) {
+    .gridWorkspaces {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .no-workspaces {
+        width: 70%;
+        font-size: 1.5rem;
+    }
+    
+    .btn-create {
+        font-size: 1.3rem;
+        padding: 0.8rem;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .main-content {
+        margin-left: 100px; 
+    }
+    
+    .no-workspaces {
+        width: 80%;
+        font-size: 1.3rem;
+    }
+    
+    .btn-create {
+        font-size: 1.1rem;
+        padding: 0.7rem;
+    }
+    
+    .cardWorkspaces {
+        height: 180px;
+    }
+}
+
+@media (max-width: 576px) {
+    .gridWorkspaces {
+        grid-template-columns: 1fr;
+    }
+    
+    .main-content {
+        margin-left: 70px; 
+        padding: 0.25rem;
+    }
+    
+    .no-workspaces {
+        width: 90%;
+        font-size: 1.1rem;
+        gap: 1rem;
+    }
+    
+    .btn-create {
+        font-size: 1rem;
+        padding: 0.6rem;
+    }
+    
+    .cardWorkspaces {
+        height: 150px;
+        max-width: 100%;
+    }
+    
+    .title {
+        padding: 0.5rem;
+        font-size: 1.5rem;
+    }
+}
+
+
+@media (max-width: 400px) {
+    .main-content {
+        margin-left: 50px;
+    }
+    
+    .no-workspaces {
+        width: 95%;
+        font-size: 1rem;
+    }
+    
+    .btn-create {
+        font-size: 0.9rem;
+        padding: 0.5rem;
+    }
 }
