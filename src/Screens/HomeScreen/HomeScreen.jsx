@@ -36,6 +36,13 @@ const HomeScreen = () => {
 
                 {loading ? (
                     <h2>Cargando...</h2>
+                ) : response.data.workspaces.filter((element) => element.workspace !== null).length === 0 ? (
+                    <div className="no-workspaces">
+                        <p>No tenés ningún workspace todavía.</p>
+                        <button onClick={() => navigate('/new')} className="btn-create">
+                            Comenzar
+                        </button>
+                    </div>
                 ) : (
                     <div className='gridWorkspaces'>
                         {response.data.workspaces
@@ -48,14 +55,13 @@ const HomeScreen = () => {
                                 >
                                     <div>
                                         <h2>{element.workspace.name}</h2>
-
                                     </div>
                                 </Link>
                             ))}
                     </div>
                 )}
-
             </main>
+
         </div>
     );
 

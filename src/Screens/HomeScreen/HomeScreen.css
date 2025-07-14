@@ -3,12 +3,37 @@
     background-color: 	#F8F5F7;
     background-color:  	#faf6f288;;
      min-height: 100vh;
-  
+
 
 }
 
+.no-workspaces{
+     display: flex;
+     flex-direction: column;
+     height: 50%;
+     width: 50%;
+     justify-content: center;
+     align-items: center;
+     padding: 1rem;
+     gap: 2rem;
+     background-color: #ffffff;
+     box-shadow: 10px 10px 10px 10px rgba(0,0,0,0.2);
+     font-size: 1.75rem;
+     margin: 1rem;
+    
+}
 
-
+.btn-create{
+    margin-top: 1rem;
+    padding: 1rem;
+    font-size: 1.5rem;
+    border-radius: .5rem;
+    background-color:#5E747F;
+    color: #ffffff;
+    &:hover{
+        background-color: #4C6F6F;
+    }
+}
 
 .main-content {
   margin-left: 150px; /*por los 150px de la sidebar*/
@@ -17,7 +42,9 @@
  flex-direction: column;
  align-items: center;
 justify-content: flex-start;
+width: 100%;
  gap: 2rem;
+
 
 }
 .title {
