@@ -42,22 +42,25 @@ const EmailVerificationScreen = () => {
 
     return (
         <section className="verification-container">
-            {status === 'verificando' && <p className="verificando">Verificando tu correo, un instante…</p>}
-            {status === 'exito' && (
-                <>
-                    <h2 className="exito">¡Correo Verificado!</h2>
-                    <p>{message}</p>
-                    <button className="btn" onClick={() => navigate('/login')}>Ir a Iniciar Sesión</button>
-                </>
-            )}
-            {status === 'error' && (
-                <>
-                    <h2 className="error">Error en la Verificación</h2>
-                    <p>{message}</p>
-                    <button className="btn" onClick={() => navigate('/register')}>Volver a Registrarse</button>
-                </>
-            )}
+            <div className="verification-box">
+                {status === 'verificando' && <p className="verificando">Verificando tu correo, un instante…</p>}
+                {status === 'exito' && (
+                    <>
+                        <h2 className="exito">¡Correo Verificado!</h2>
+                        <p>{message}</p>
+                        <button className="btn btn-exito" onClick={() => navigate('/login')}>Ir a Iniciar Sesión</button>
+                    </>
+                )}
+                {status === 'error' && (
+                    <>
+                        <h2 className="error">Error en la Verificación</h2>
+                        <p>{message}</p>
+                        <button className="btn btn-error" onClick={() => navigate('/register')}>Volver a Registrarse</button>
+                    </>
+                )}
+            </div>
         </section>
+
     );
 };
 
