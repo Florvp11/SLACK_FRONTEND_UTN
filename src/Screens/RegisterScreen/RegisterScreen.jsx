@@ -49,7 +49,7 @@ const RegisterScreen = () => {
             setSuccess(true);
 
             if (serverData.ok) {
-                navigate("/verify-email");
+                window.open("/verify-email", "_blank");
             }
 
         } catch (error) {

@@ -3,7 +3,7 @@
     background-color: 	#F8F5F7;
     background-color:  	#faf6f288;;
      min-height: 100vh;
-
+  background: linear-gradient(135deg, #e3e3eb70 0%, #f18e9775 100%);
 
 }
 
@@ -28,10 +28,12 @@
     padding: 1rem;
     font-size: 1.5rem;
     border-radius: .5rem;
-    background-color:#5E747F;
+    background-color:#b45c82dc;
+    transition: 0.3s ease-in-out;
     color: #ffffff;
+    cursor: pointer;
     &:hover{
-        background-color: #4C6F6F;
+        background-color: #B45C82;
     }
 }
 
@@ -66,7 +68,7 @@ width: 100%;
 .cardWorkspaces {
 
   height: 200px;
-    background-color: #734b5e96;
+        background-color: #701e2c96;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -75,13 +77,13 @@ width: 100%;
     width: 100%;
     border-radius: 8px;
     text-decoration: none;
-    color: 	#F8F5F7;
+    color: 	#070707;
     transition: transform 0.2s ease;
     border: 2px solid #734B5E;
 }
 
 .cardWorkspaces:hover {
     transform: scale(1.01);
-    background-color: #734b5eb4;
+    background-color: #734b5e;
    
 }
