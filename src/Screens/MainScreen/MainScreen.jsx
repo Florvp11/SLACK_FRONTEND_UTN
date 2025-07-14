@@ -14,7 +14,7 @@ const MainScreen = () => {
                     Tu futuro empieza aquí.
                 </p>
                 <button
-                    className="btn btn-register"
+                    className=" btn-register"
                     onClick={() => navigate('/register')}
                 >
                     Registrarse
