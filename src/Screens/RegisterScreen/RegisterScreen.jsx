@@ -49,7 +49,7 @@ const RegisterScreen = () => {
             setSuccess(true);
 
             if (serverData.ok) {
-                window.open("/api/users/verify-email", "_blank")
+                navigate("/")
 
             }
 

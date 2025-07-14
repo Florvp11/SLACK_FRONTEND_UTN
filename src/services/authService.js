@@ -46,3 +46,31 @@ export const register = async ({ name, email, password }) => {
         throw { message: "Error al conectar con el servidor" };
     }
 };
+
+export const verifyEmail = async (verify_token) => {
+    try {
+        // Asumo que tu backend usa método POST para la verificación, si es GET,
+        // solo cambia método y cómo pasás el token (en query o body).
+        const serverResponse = await fetch(
+            `${ENVIRONMENT.URL_API}/api/users/verify?verify_token=${encodeURIComponent(verify_token)}`,
+            {
+                method: methods_http.GET,
+                headers: {
+                    "Content-Type": "application/json",
+                },
+            }
+        );
+
+        const serverData = await serverResponse.json();
+
+        if (!serverResponse.ok) {
+            // Lanzamos error con mensaje del backend si status no es ok
+            throw new Error(serverData.message || "Error al verificar el email");
+        }
+
+        return serverData; // esperado { ok: true, message: "...", etc }
+    } catch (error) {
+        console.error("Error en verifyEmail service:", error);
+        throw { message: error.message || "Error al conectar con el servidor" };
+    }
+};

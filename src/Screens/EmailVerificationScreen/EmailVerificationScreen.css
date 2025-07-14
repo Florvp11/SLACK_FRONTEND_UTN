@@ -71,3 +71,38 @@
   background-color: rgb(203, 175, 248);
   color: #000000;
 }
+/*--------------------pantalla nueva--------------*/
+
+.verification-container {
+  padding: 2rem;
+  text-align: center;
+}
+
+.verificando {
+  font-style: italic;
+  color: #555;
+}
+
+.exito {
+  color: #28a745; /* verde */
+}
+
+.error {
+  color: #dc3545; /* rojo */
+}
+
+.btn {
+  margin-top: 1rem;
+  padding: 0.6rem 1.2rem;
+  background-color: #b45c82;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #913d61;
+}

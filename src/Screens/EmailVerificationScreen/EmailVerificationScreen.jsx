@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import ENVIRONMENT from '../../constants/environment';
-import methods_http from '../../constants/methodsHTTP';
+import { verifyEmail } from '../../services/authService';
+import './EmailVerificationScreen.css'; // Importa el CSS
 
 const EmailVerificationScreen = () => {
     const location = useLocation();
@@ -10,7 +10,6 @@ const EmailVerificationScreen = () => {
     const [status, setStatus] = useState('verificando'); // 'verificando', 'exito', 'error'
     const [message, setMessage] = useState('');
 
-    // Extraer token de la URL
     const getTokenFromQuery = () => {
         const params = new URLSearchParams(location.search);
         return params.get('verify_token');
@@ -18,55 +17,44 @@ const EmailVerificationScreen = () => {
 
     useEffect(() => {
         const token = getTokenFromQuery();
+
         if (!token) {
             setStatus('error');
             setMessage('No se encontró el token de verificación en la URL.');
             return;
         }
 
-        // Llamada al backend para verificar el token
-        const verifyEmail = async () => {
-            try {
-                const response = await fetch(`${ENVIRONMENT.URL_API}/api/users/verify`, {
-                    method: methods_http.POST, // o GET, según tu backend
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({ verify_token: token }),
-                });
-                const data = await response.json();
-
-                if (response.ok && data.ok) {
+        verifyEmail(token)
+            .then((data) => {
+                if (data.ok) {
                     setStatus('exito');
-                    setMessage('¡Tu correo fue verificado con éxito! Ahora podés iniciar sesión.');
+                    setMessage(data.message || 'Correo verificado con éxito.');
                 } else {
                     setStatus('error');
-                    setMessage(data.message || 'No se pudo verificar el correo.');
+                    setMessage(data.message || 'Error al verificar el correo.');
                 }
-            } catch (error) {
+            })
+            .catch((error) => {
                 setStatus('error');
-                setMessage('Error al conectar con el servidor.');
-            }
-        };
-
-        verifyEmail();
+                setMessage(error.message || 'Error en la conexión con el servidor.');
+            });
     }, [location.search]);
 
     return (
-        <section style={{ padding: '2rem', textAlign: 'center' }}>
-            {status === 'verificando' && <p>🌟 Verificando tu correo, un instante…</p>}
+        <section className="verification-container">
+            {status === 'verificando' && <p className="verificando">Verificando tu correo, un instante…</p>}
             {status === 'exito' && (
                 <>
-                    <h2>✅ ¡Correo Verificado!</h2>
+                    <h2 className="exito">¡Correo Verificado!</h2>
                     <p>{message}</p>
-                    <button onClick={() => navigate('/login')}>Ir a Iniciar Sesión</button>
+                    <button className="btn" onClick={() => navigate('/login')}>Ir a Iniciar Sesión</button>
                 </>
             )}
             {status === 'error' && (
                 <>
-                    <h2>❌ Error en la Verificación</h2>
+                    <h2 className="error">Error en la Verificación</h2>
                     <p>{message}</p>
-                    <button onClick={() => navigate('/register')}>Volver a Registrarse</button>
+                    <button className="btn" onClick={() => navigate('/register')}>Volver a Registrarse</button>
                 </>
             )}
         </section>
