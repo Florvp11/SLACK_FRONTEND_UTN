@@ -125,3 +125,82 @@
   background-color: var(--color-accent-dark);
 } 
 }
+
+
+@media (max-width: 768px) {
+  .register-form {
+    padding: 1.25rem;
+    max-width: 350px;
+  }
+  
+  .register-form-text h1 {
+    font-size: 1.75rem;
+  }
+  
+  .register-form input {
+    padding: 0.6rem;
+  }
+  
+  .register-btn {
+    padding: 0.65rem;
+  }
+}
+
+
+@media (max-width: 576px) {
+  .register-container {
+    padding: 0.5rem;
+  }
+  
+  .register-form {
+    padding: 1rem;
+    margin: 0.5rem;
+    max-width: 320px;
+  }
+  
+  .register-form-text h1 {
+    font-size: 1.5rem;
+  }
+  
+  .register-form-text p {
+    font-size: 0.9rem;
+  }
+  
+  .register-form input {
+    padding: 0.55rem;
+    font-size: 0.9rem;
+  }
+  
+  .register-btn {
+    font-size: 0.9rem;
+  }
+  
+  .login-btn {
+    font-size: 0.9rem;
+  }
+}
+
+
+@media (max-width: 400px) {
+  .register-form {
+    padding: 0.8rem;
+    max-width: 280px;
+  }
+  
+  .register-form-text h1 {
+    font-size: 1.3rem;
+  }
+  
+  .register-form input {
+    padding: 0.5rem;
+  }
+  
+  .btn-container {
+    gap: 0.5rem;
+  }
+  
+  .redireccion-container {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
