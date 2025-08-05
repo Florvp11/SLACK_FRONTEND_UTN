@@ -15,4 +15,6 @@ React Router DOM,
 Vite,
 React-icons
 
-**Demo deployed : https://frontend-utn-seven.vercel.app/**
+**Demo deployed : https://frontend-utn-seven.vercel.app/
+Demo user : test@gmail.com
+Demo Password : test**
